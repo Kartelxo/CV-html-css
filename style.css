@@ -1,0 +1,269 @@
+/* ========== 1. VARIÁVEIS E BASE ========== */
+:root {
+  --fundo-pagina: #ffffff;
+  --texto-principal: #0f172a;
+  --texto-secundario: #475569;
+  --cor-primaria: #4f46e5;
+  --cor-primaria-hover: #4338ca;
+  --borda-suave: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  font-family: "Sora", system-ui, sans-serif;
+  line-height: 1.7;
+  background-color: var(--fundo-pagina);
+  color: var(--texto-principal);
+}
+
+h1, h2, h3 { line-height: 1.25; }
+
+/* ========== 2. NAVEGAÇÃO (CENTRADA COM SOMBRA) ========== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra na barra de navegação */
+}
+
+nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+/* ========== 3. SECÇÃO INICIAL (HERO FLUIDO COM SOMBRA NO TEXTO) ========== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 100%);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Sombra no fundo do topo */
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra suave no título principal */
+}
+
+.hero p {
+  max-width: 550px;
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra leve no parágrafo do topo */
+}
+
+/* ========== 4. ESTRUTURA CONTÍNUA ========== */
+main {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+/* Linha divisória com sombra leve para ficar bem mais visível */
+main section {
+  padding: 3.5rem 1.5rem;
+  border-bottom: 2px solid var(--borda-suave);
+  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.05); /* Sombra na linha de separação */
+}
+
+main section:last-of-type {
+  border-bottom: none;
+  box-shadow: none;
+}
+
+main section > * + * { margin-top: 1.25rem; }
+
+/* Títulos com sombra leve no texto para destacar da página */
+h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--texto-principal);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08); /* Sombra subtil nos títulos H2 */
+}
+
+ul, ol { padding-left: 1.25rem; color: var(--texto-secundario); }
+small { display: block; color: var(--texto-secundario); }
+
+/* ========== 5. SOBRE MIM ========== */
+.sobre {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.sobre div { flex: 1 1 300px; }
+
+.foto {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.25); /* Sombra azulada na foto */
+}
+
+/* ========== 6. COMPETÊNCIAS E LINKS (COM SECÇÃO EM DESTAQUE) ========== */
+/* Mudança de cor no fundo da secção de competências para destacar */
+#competencias {
+  background-color: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.grupos { display: flex; flex-wrap: wrap; gap: 2rem; }
+.grupos > div { flex: 1 1 200px; }
+
+.tags, .links { display: flex; flex-wrap: wrap; gap: 0.6rem; list-style: none; padding: 0; }
+
+.tags li {
+  padding: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+  background: #ffffff;
+  color: var(--texto-secundario);
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03); /* Sombra nas tags */
+}
+
+.links li { flex: 1 1 220px; }
+
+.links a {
+  display: block;
+  padding: 1.25rem;
+  color: var(--texto-secundario);
+  text-decoration: none;
+  background: #fafafa;
+  border-left: 4px solid var(--cor-primaria);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04); /* Sombra nos cartões de links */
+  transition: background 0.2s, transform 0.2s;
+}
+
+.links a:hover {
+  background: #f1f5f9;
+  transform: translateY(-2px); /* Ligeiro levantamento ao passar o rato */
+}
+
+.links strong { display: block; color: var(--texto-principal); margin-bottom: 0.25rem; }
+
+/* ========== 7. GALERIA ========== */
+.galeria { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+
+.galeria figure {
+  position: relative;
+  flex: 1 1 240px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Sombra marcante em cada imagem da galeria */
+}
+
+.galeria img { width: 100%; height: 100%; object-fit: cover; }
+
+.galeria figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.6rem;
+  background: rgba(15, 23, 42, 0.85);
+  color: #fff;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* ========== 8. TABELA DO HORÁRIO ========== */
+.tabela { overflow-x: auto; }
+
+table {
+  width: 100%;
+  min-width: 500px;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th, td { padding: 0.85rem; border-bottom: 1px solid #e2e8f0; }
+th { color: var(--texto-principal); font-weight: 600; border-bottom: 2px solid var(--texto-principal); }
+
+/* ========== 9. FORMULÁRIO E BOTÕES ========== */
+form { display: flex; flex-direction: column; gap: 1.25rem; max-width: 500px; }
+label { display: flex; flex-direction: column; gap: 0.4rem; font-weight: 600; }
+
+input, textarea {
+  padding: 0.8rem;
+  font: inherit;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra interna para os campos */
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+}
+
+/* Botão centrado com sombra vibrante */
+.botao, button {
+  align-self: center;
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: var(--cor-primaria);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4); /* Sombra pronunciada no botão */
+  transition: background 0.2s, transform 0.15s;
+}
+
+.botao:hover, button:hover {
+  background: var(--cor-primaria-hover);
+  transform: translateY(-1px);
+}
+
+/* ========== 10. RODAPÉ ========== */
+footer {
+  padding: 3rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  background: #0f172a;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra interna no rodapé */
+}
